@@ -70,7 +70,43 @@ public:
 		return age;
 	}
 };
+cats  weight(const int N, cats arr[N])
+{
+	cout << "set weight - " << endl;
 
+	float weight;
+	cin >> weight;
+	bool  k = false;
+	for (int i(0); i < N; i++)
+	{
+
+		if (choose_1(weight, arr[i], i) == i)
+		{
+			cout << " Nice! It is cat number - " << i << endl;
+			k = true;
+			break;
+		}
+	}
+	if (k == false)
+	{
+		cout << "Sorry, enter a different weight " << endl;
+	}
+}
+void sort_age()
+{
+	cats temp();
+	for (int i(0); i<5; i++)
+	{
+		for (int k(0); k < 4; k++)
+			if (cat[k].get_age() > cat[k + 1].get_age())
+				swap(cat[k], cat[k + 1]);
+
+	}
+	for (int i(0); i < 5; i++)
+	{
+		cout << cat[i].get_age() << " - age   number -   " << cat[i].get_number() << endl;
+	}
+}
 int choose_1(float weight, cats cat, int i)
 {
 	if (cat.get_weight() > weight)
@@ -106,45 +142,13 @@ int main()
 		switch (a)
 		{
 		case 1:
-		{   
-			cout << "set weight - " << endl;
-			bool  k = false;
-			float weight;
-			cin >> weight;
-			for (int  i(0); i < 5; i++)
-			{
-				if (choose_1(weight, cat[i], i) == i)
-				{
-					cout << " Nice! It is cat number - " << i << endl;
-					k = true;
-					break;
-				}
-			}
-				if (k == false)
-				{
-					cout << "Sorry, enter a different weight " << endl;
-				
-				
-				}
-			
+		{   	
+			weight(L,cat[L])
 			break;
 		}
 		case 2:
-		{  cats temp();
-		for (int i(0); i<5; i++)
-		{
-			for (int k(0); k < 4; k++)
-				if (cat[k].get_age() > cat[k + 1].get_age())
-					swap(cat[k], cat[k + 1]);
-
-		}
-		for (int i(0); i < 5; i++)
-		{
-			cout << cat[i].get_age() << " - age   number -   " << cat[i].get_number() << endl;
-		}
-		
+		{ sort_age();
 		break;
-
 		}
 		case 3:
 		{  
